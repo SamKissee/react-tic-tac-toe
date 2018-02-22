@@ -36,6 +36,8 @@ class Game extends React.Component {
   }
 
   handleClick(i) {
+    dispatch({type:'HISTORY', index: i})
+    // console.log(this.state);
     const history = this.state.history.slice(0, this.state.stepNumber + 1);
     const current = history[history.length - 1];
     const squares = current.squares.slice();
@@ -62,9 +64,9 @@ class Game extends React.Component {
   }
 
   render() {
+    console.log(JSON.stringify(this.state));
     const history = this.state.history;
     const current = history[this.state.stepNumber];
-    console.log(current);
     const winner = this.calculateWinner(current.squares);
 
     const moves = history.map((step, move) => {

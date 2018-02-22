@@ -4,9 +4,9 @@ import App from './components/App';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { HashRouter } from 'react-router-dom';
-import ticketListReducer from './reducers/Game-reducer';
+import historyReducer from './reducers/historyReducer';
 
-const store = createStore(ticketListReducer);
+const store = createStore(historyReducer);
 
 const render = (Component) => {
   ReactDOM.render(

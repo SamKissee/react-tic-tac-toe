@@ -1,65 +1,74 @@
 import React from 'react';
 import Game from './Game';
+import { Switch, Route, withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
-function App() {
-  return (
-    <div>
-      <style jsx global>{`
-        body {
-          font: 14px "Century Gothic", Futura, sans-serif;
-          margin: 20px;
-        }
+class App extends React.Component {
 
-        ol, ul {
-          padding-left: 30px;
-        }
+  constructor(props) {
+    super(props);
+  }
+  render(){
+    return (
+      <div>
+        <style jsx global>{`
+         body {
+           font: 14px "Century Gothic", Futura, sans-serif;
+           margin: 20px;
+         }
 
-        .board-row:after {
-          clear: both;
-          content: "";
-          display: table;
-        }
+         ol, ul {
+           padding-left: 30px;
+         }
 
-        .status {
-          margin-bottom: 10px;
-        }
+         .board-row:after {
+           clear: both;
+           content: "";
+           display: table;
+         }
 
-        .square {
-          background: #fff;
-          border: 1px solid #999;
-          float: left;
-          font-size: 24px;
-          font-weight: bold;
-          line-height: 34px;
-          height: 34px;
-          margin-right: -1px;
-          margin-top: -1px;
-          padding: 0;
-          text-align: center;
-          width: 34px;
-        }
+         .status {
+           margin-bottom: 10px;
+         }
 
-        .square:focus {
-          outline: none;
-        }
+         .square {
+           background: #fff;
+           border: 1px solid #999;
+           float: left;
+           font-size: 24px;
+           font-weight: bold;
+           line-height: 34px;
+           height: 34px;
+           margin-right: -1px;
+           margin-top: -1px;
+           padding: 0;
+           text-align: center;
+           width: 34px;
+         }
 
-        .kbd-navigation .square:focus {
-          background: #ddd;
-        }
+         .square:focus {
+           outline: none;
+         }
 
-        .game {
-          display: flex;
-          flex-direction: row;
-        }
+         .kbd-navigation .square:focus {
+           background: #ddd;
+         }
 
-        .game-info {
-          margin-left: 20px;
-        }
-      `}</style>
+         .game {
+           display: flex;
+           flex-direction: row;
+         }
 
-      <Game />
-    </div>
-  );
+         .game-info {
+           margin-left: 20px;
+         }
+       `}</style>
+        <Game />
+      </div>
+    );
+  }
 }
+
 
 export default App;
